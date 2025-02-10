@@ -1,0 +1,101 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.0.5",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Sarah.Store.Application": {
+      "path": "src/Sarah.Store.Application/Sarah.Store.Application.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.Application.Tests": {
+      "path": "test/Sarah.Store.Application.Tests/Sarah.Store.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Sarah.Store.Domain.Shared": {
+      "path": "src/Sarah.Store.Domain.Shared/Sarah.Store.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.Application.Contracts": {
+      "path": "src/Sarah.Store.Application.Contracts/Sarah.Store.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.HttpApi": {
+      "path": "src/Sarah.Store.HttpApi/Sarah.Store.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.HttpApi.Client": {
+      "path": "src/Sarah.Store.HttpApi.Client/Sarah.Store.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.EntityFrameworkCore.Tests": {
+      "path": "test/Sarah.Store.EntityFrameworkCore.Tests/Sarah.Store.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Sarah.Store.EntityFrameworkCore": {
+      "path": "src/Sarah.Store.EntityFrameworkCore/Sarah.Store.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.TestBase": {
+      "path": "test/Sarah.Store.TestBase/Sarah.Store.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Sarah.Store.Domain.Tests": {
+      "path": "test/Sarah.Store.Domain.Tests/Sarah.Store.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Sarah.Store.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Sarah.Store.HttpApi.Client.ConsoleTestApp/Sarah.Store.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Sarah.Store.DbMigrator": {
+      "path": "src/Sarah.Store.DbMigrator/Sarah.Store.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.HttpApi.Host": {
+      "path": "src/Sarah.Store.HttpApi.Host/Sarah.Store.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "Sarah.Store.Domain": {
+      "path": "src/Sarah.Store.Domain/Sarah.Store.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
