@@ -2,14 +2,14 @@
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Sarah.Store.Books;
+namespace Sarah.Store.Services.Subjects;
 
-public interface IBookAppService :
+public interface ISubjectAppService :
     ICrudAppService< //Defines CRUD methods
-        BookDto, //Used to show books
+        SubjectDto, //Used to show books
         Guid, //Primary key of the book entity
         PagedAndSortedResultRequestDto, //Used for paging/sorting
-        CreateUpdateBookDto> //Used to create/update a book
+        CreateUpdateSubjectDto> //Used to create/update a book
 {
 
 }

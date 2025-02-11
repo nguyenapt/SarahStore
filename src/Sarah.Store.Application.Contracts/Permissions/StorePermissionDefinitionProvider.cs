@@ -11,10 +11,10 @@ public class StorePermissionDefinitionProvider : PermissionDefinitionProvider
     {
         var myGroup = context.AddGroup(StorePermissions.GroupName);
 
-        var booksPermission = myGroup.AddPermission(StorePermissions.Books.Default, L("Permission:Books"));
-        booksPermission.AddChild(StorePermissions.Books.Create, L("Permission:Books.Create"));
-        booksPermission.AddChild(StorePermissions.Books.Edit, L("Permission:Books.Edit"));
-        booksPermission.AddChild(StorePermissions.Books.Delete, L("Permission:Books.Delete"));
+        var booksPermission = myGroup.AddPermission(StorePermissions.Subjects.Default, L("Permission:Subjects"));
+        booksPermission.AddChild(StorePermissions.Subjects.Create, L("Permission:Subjects.Create"));
+        booksPermission.AddChild(StorePermissions.Subjects.Edit, L("Permission:Subjects.Edit"));
+        booksPermission.AddChild(StorePermissions.Subjects.Delete, L("Permission:Subjects.Delete"));
         //Define your own permissions here. Example:
         //myGroup.AddPermission(StorePermissions.MyPermission1, L("Permission:MyPermission1"));
     }

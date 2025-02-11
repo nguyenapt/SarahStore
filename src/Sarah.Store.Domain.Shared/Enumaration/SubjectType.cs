@@ -1,6 +1,6 @@
-﻿namespace Sarah.Store.Books;
+﻿namespace Sarah.Store.Enumaration;
 
-public enum BookType
+public enum SubjectType
 {
     Undefined,
     Adventure,

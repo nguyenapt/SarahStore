@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
-using Sarah.Store.Books;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -15,6 +14,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Sarah.Store.Entities;
 
 namespace Sarah.Store.EntityFrameworkCore;
 
@@ -28,7 +28,9 @@ public class StoreDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
-    public DbSet<Book> Books { get; set; }
+    public DbSet<Subject> subjects { get; set; }
+    public DbSet<Course> courses { get; set; }
+
 
     #region Entities from the modules
 
@@ -52,6 +54,10 @@ public class StoreDbContext :
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
     public DbSet<IdentitySession> Sessions { get; set; }
+
+    public DbSet<Course> Courses { get; set; }
+
+    public DbSet<Subject> Subjects { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
@@ -81,14 +87,22 @@ public class StoreDbContext :
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
         
-        builder.Entity<Book>(b =>
+        builder.Entity<Subject>(b =>
         {
-            b.ToTable(StoreConsts.DbTablePrefix + "Books",
+            b.ToTable(StoreConsts.DbTablePrefix + "Subjects",
                 StoreConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
         });
-        
+
+        builder.Entity<Course>(b =>
+        {
+            b.ToTable(StoreConsts.DbTablePrefix + "Courses",
+                StoreConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+
         /* Configure your own tables/entities inside here */
 
         //builder.Entity<YourEntity>(b =>
