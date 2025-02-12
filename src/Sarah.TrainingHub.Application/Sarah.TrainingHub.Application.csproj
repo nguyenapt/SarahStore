@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Sarah.TrainingHub</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sarah.TrainingHub.Domain\Sarah.TrainingHub.Domain.csproj" />
+    <ProjectReference Include="..\Sarah.TrainingHub.Application.Contracts\Sarah.TrainingHub.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Sarah.TrainingHub.Application.Contracts\Sarah.TrainingHub.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Sarah.TrainingHub.Domain\Sarah.TrainingHub.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="9.0.4" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="9.0.4" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="9.0.4" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="9.0.4" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="9.0.4" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="9.0.4" />
+  </ItemGroup>
+
+</Project>

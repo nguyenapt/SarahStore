@@ -1,0 +1,13 @@
+FROM mcr.microsoft.com/dotnet/aspnet:9.0  AS base
+COPY bin/Release/net9.0/publish/ app/
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+RUN dotnet dev-certs https -v -ep openiddict.pfx -p b2d5440a-4e71-4bb2-aee0-53b5d54b2ba6
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /src .
+
+ENTRYPOINT ["dotnet", "Sarah.TrainingHub.HttpApi.Host.dll"]
