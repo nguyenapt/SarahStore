@@ -10,10 +10,11 @@ using Volo.Abp.Domain.Repositories;
 using System.Linq.Dynamic.Core;
 using Sarah.TrainingHub.Entities;
 using Sarah.TrainingHub.Services.Subjects;
+using Sarah.TrainingHub.Services.Courses;
 
 namespace Sarah.TrainingHub.Services;
 
-[Authorize(StorePermissions.Subjects.Default)]
+[Authorize(TrainingHubPermissions.Subjects.Default)]
 public class SubjectAppService : ApplicationService, ISubjectAppService
 {
     private readonly IRepository<Subject, Guid> _repository;
@@ -46,7 +47,7 @@ public class SubjectAppService : ApplicationService, ISubjectAppService
         );
     }
 
-    [Authorize(StorePermissions.Subjects.Create)]
+    [Authorize(TrainingHubPermissions.Subjects.Create)]
     public async Task<SubjectDto> CreateAsync(CreateUpdateSubjectDto input)
     {
         var subject = ObjectMapper.Map<CreateUpdateSubjectDto, Subject>(input);
@@ -54,7 +55,7 @@ public class SubjectAppService : ApplicationService, ISubjectAppService
         return ObjectMapper.Map<Subject, SubjectDto>(subject);
     }
 
-    [Authorize(StorePermissions.Subjects.Edit)]
+    [Authorize(TrainingHubPermissions.Subjects.Edit)]
     public async Task<SubjectDto> UpdateAsync(Guid id, CreateUpdateSubjectDto input)
     {
         var subject = await _repository.GetAsync(id);
@@ -63,7 +64,7 @@ public class SubjectAppService : ApplicationService, ISubjectAppService
         return ObjectMapper.Map<Subject, SubjectDto>(subject);
     }
 
-    [Authorize(StorePermissions.Subjects.Delete)]
+    [Authorize(TrainingHubPermissions.Subjects.Delete)]
     public async Task DeleteAsync(Guid id)
     {
         await _repository.DeleteAsync(id);

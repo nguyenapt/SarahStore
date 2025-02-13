@@ -30,6 +30,7 @@ public class StoreDbContext :
 
     public DbSet<Subject> subjects { get; set; }
     public DbSet<Course> courses { get; set; }
+    public DbSet<Curriculum> curriculums { get; set; }
 
 
     #region Entities from the modules
@@ -86,10 +87,10 @@ public class StoreDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
-        
-        builder.Entity<Subject>(b =>
+
+        builder.Entity<Curriculum>(b =>
         {
-            b.ToTable(StoreConsts.DbTablePrefix + "Subjects",
+            b.ToTable(StoreConsts.DbTablePrefix + "Curriculums",
                 StoreConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
@@ -102,6 +103,15 @@ public class StoreDbContext :
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
         });
+
+        builder.Entity<Subject>(b =>
+        {
+            b.ToTable(StoreConsts.DbTablePrefix + "Subjects",
+                StoreConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+        
 
         /* Configure your own tables/entities inside here */
 

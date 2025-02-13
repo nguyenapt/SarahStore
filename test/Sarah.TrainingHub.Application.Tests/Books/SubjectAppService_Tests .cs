@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Sarah.TrainingHub.Enumaration;
+using Sarah.TrainingHub.Services.Courses;
 using Sarah.TrainingHub.Services.Subjects;
 using Shouldly;
 using Volo.Abp.Application.Dtos;

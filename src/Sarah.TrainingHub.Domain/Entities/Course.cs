@@ -11,10 +11,18 @@ public class Course : Entity<Guid>
 {
     [StringLength(100)]
     public string Code { get; set; }
-    [StringLength(100)]
+    [StringLength(255)]
     public string Name { get; set; }
-    [StringLength(1000)]
-    public string Description { get; set; }
+
+    [StringLength(255)]
+    public string? Thumb { get; set; }
+
+    [StringLength(255)]
+    public string? Summary { get; set; }
+
+    [StringLength(5000)]
+    public string? Description { get; set; }
+
     public bool? IsDeactive { get; set; }    
     
 }

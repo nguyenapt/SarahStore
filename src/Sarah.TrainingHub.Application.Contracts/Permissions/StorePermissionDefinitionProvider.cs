@@ -9,13 +9,18 @@ public class StorePermissionDefinitionProvider : PermissionDefinitionProvider
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var myGroup = context.AddGroup(StorePermissions.GroupName);
+        var myGroup = context.AddGroup(TrainingHubPermissions.GroupName);
 
-        var booksPermission = myGroup.AddPermission(StorePermissions.Subjects.Default, L("Permission:Subjects"));
-        booksPermission.AddChild(StorePermissions.Subjects.Create, L("Permission:Subjects.Create"));
-        booksPermission.AddChild(StorePermissions.Subjects.Edit, L("Permission:Subjects.Edit"));
-        booksPermission.AddChild(StorePermissions.Subjects.Delete, L("Permission:Subjects.Delete"));
+        var subjectsPermission = myGroup.AddPermission(TrainingHubPermissions.Subjects.Default, L("Permission:Subjects"));
+        subjectsPermission.AddChild(TrainingHubPermissions.Subjects.Create, L("Permission:Subjects.Create"));
+        subjectsPermission.AddChild(TrainingHubPermissions.Subjects.Edit, L("Permission:Subjects.Edit"));
+        subjectsPermission.AddChild(TrainingHubPermissions.Subjects.Delete, L("Permission:Subjects.Delete"));
         //Define your own permissions here. Example:
+
+        var coursesPermission = myGroup.AddPermission(TrainingHubPermissions.Courses.Default, L("Permission:Courses"));
+        coursesPermission.AddChild(TrainingHubPermissions.Courses.Create, L("Permission:Courses.Create"));
+        coursesPermission.AddChild(TrainingHubPermissions.Courses.Edit, L("Permission:Courses.Edit"));
+        coursesPermission.AddChild(TrainingHubPermissions.Courses.Delete, L("Permission:Courses.Delete"));
         //myGroup.AddPermission(StorePermissions.MyPermission1, L("Permission:MyPermission1"));
     }
 
