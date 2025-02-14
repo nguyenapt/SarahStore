@@ -21,6 +21,11 @@ public class StorePermissionDefinitionProvider : PermissionDefinitionProvider
         coursesPermission.AddChild(TrainingHubPermissions.Courses.Create, L("Permission:Courses.Create"));
         coursesPermission.AddChild(TrainingHubPermissions.Courses.Edit, L("Permission:Courses.Edit"));
         coursesPermission.AddChild(TrainingHubPermissions.Courses.Delete, L("Permission:Courses.Delete"));
+
+        var curriculumPermission = myGroup.AddPermission(TrainingHubPermissions.Curriculums.Default, L("Permission:Curriculums"));
+        curriculumPermission.AddChild(TrainingHubPermissions.Curriculums.Create, L("Permission:Curriculums.Create"));
+        curriculumPermission.AddChild(TrainingHubPermissions.Curriculums.Edit, L("Permission:Curriculums.Edit"));
+        curriculumPermission.AddChild(TrainingHubPermissions.Curriculums.Delete, L("Permission:Curriculums.Delete"));
         //myGroup.AddPermission(StorePermissions.MyPermission1, L("Permission:MyPermission1"));
     }
 
